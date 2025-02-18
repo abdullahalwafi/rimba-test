@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UsersController extends Controller
 {
@@ -11,7 +13,12 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        Log::info('Ambil semua data user');
+        $users = User::all();
+        return response()->json([
+            'message' => 'Ambil semua data user',
+            'data' => $users,
+        ]);
     }
 
     /**
