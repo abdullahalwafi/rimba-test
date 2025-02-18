@@ -11,11 +11,11 @@ API ini dibuat menggunakan Laravel 11 untuk mengelola data pengguna. API ini men
 
 ## 📜 **Dokumentasi API**
 Dokumentasi Swagger tersedia di:  
-🔗 **[API Documentation](https:///api/documentation)**
+🔗 **[API Documentation](https://rimba.alwafisysdev.tech/api/documentation)**
 
 ## 🌍 **Deploy API**
 API ini telah dideploy ke Vercel dan dapat diakses melalui:  
-🔗 **[User API Live](https://)**
+🔗 **[User API Live](https://rimba.alwafisysdev.tech)**
 
 ---
 
