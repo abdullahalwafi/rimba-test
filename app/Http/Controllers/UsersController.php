@@ -78,16 +78,20 @@ class UsersController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,' . $id,
-            'age' => 'required|integer|min:1',
+            'name' => 'string|max:255',
+            'email' => 'email|unique:users,email,' . $id,
+            'age' => 'integer|min:1',
         ]);
 
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $user->update($request->all());
+        $user->update([
+            'name' => $request->name ?? $user->name,
+            'email' => $request->email ?? $user->email,
+            'age' => $request->age ?? $user->age,
+        ]);
 
         return response()->json([
             'message' => 'User updated successfully',
